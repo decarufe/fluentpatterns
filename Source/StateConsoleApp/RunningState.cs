@@ -8,13 +8,19 @@ namespace StateConsoleApp
   {
     public override void OnExitState()
     {
-      Console.WriteLine("Exit Running State");
+      Logger.LogInfo("Exit Running State");
     }
 
     public override void OnEnterState(object parameter)
     {
-      Console.WriteLine("Enter Running State");
-      Thread.Sleep(2000);
+      Logger.LogInfo("Enter Running State");
+      Console.Write("Running");
+      for (int i = 0; i < 10; i++)
+      {
+        Thread.Sleep(100);
+        Console.Write(".");
+      }
+      Console.WriteLine();
       StateManager.ChangeState<IdleState>();
     }
   }

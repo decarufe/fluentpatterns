@@ -13,10 +13,5 @@ namespace StateLibrary
     public abstract void OnExitState();
 
     public abstract void OnEnterState(object parameter);
-
-    protected void ChangeState<T>(object parameter = null) where T : State, new()
-    {
-      StateManager.ChangeState<T>(parameter);
-    }
   }
 }

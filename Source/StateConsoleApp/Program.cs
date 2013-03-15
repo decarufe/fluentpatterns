@@ -11,14 +11,15 @@ namespace StateConsoleApp
   {
     static void Main(string[] args)
     {
-      var state = new StateManager()
+      var stateManager = new StateManagerBuilder()
         .RegisterState(() => new IdleState())
         .RegisterState(() => new RunningState())
-        .RegisterState(() => new FaultedState())
-        .Build();
+        .RegisterState(() => new InvalidState())
+        .RegisterState(() => new StopState())
+        .Start<IdleState>();
 
-      state.StateManager.ChangeState<IdleState>();
-
+      Console.WriteLine();
+      stateManager.Terminate();
       Console.WriteLine("Press enter to exit");
       Console.ReadLine();
     }

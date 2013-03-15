@@ -11,6 +11,14 @@ namespace StateLibrary
     private Dictionary<Type, State> _states = new Dictionary<Type, State>(); 
     private State mCurrentState;
 
+    public StateManager(IEnumerable<State> states)
+    {
+      foreach (var state in states)
+      {
+        _states.Add(state.GetType(), state);
+      }
+    }
+
     public State ChangeState<T>(object parameter = null) where T : State, new()
     {
       Terminate();
@@ -36,31 +44,5 @@ namespace StateLibrary
       return mCurrentState is T;
     }
 
-    public StateManager RegisterState<T>(Func<T> state) where T: State
-    {
-      _states.Add(typeof (T), state());
-      return this;
-    }
-
-    public State Build()
-    {
-      var nullState = new NullState();
-      nullState.StateManager = this;
-      nullState.OnEnterState(null);
-      return nullState;
-    }
-  }
-
-  public class NullState : State
-  {
-    public override void OnExitState()
-    {
-      Console.WriteLine("Exit Null State");
-    }
-
-    public override void OnEnterState(object parameter)
-    {
-      Console.WriteLine("Enter Null State");
-    }
   }
 }

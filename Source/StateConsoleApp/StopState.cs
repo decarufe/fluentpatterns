@@ -3,16 +3,16 @@ using StateLibrary;
 
 namespace StateConsoleApp
 {
-  public class FaultedState : State
+  public class StopState : State
   {
     public override void OnExitState()
     {
-      Console.WriteLine("Exit Faulted State");
+      Logger.LogInfo("Exit Stop State");
     }
 
     public override void OnEnterState(object parameter)
     {
-      Console.WriteLine("Enter Faulted State");
+      Logger.LogInfo("Enter Stop State");
     }
   }
 }
