@@ -10,15 +10,9 @@ namespace StateLibrary
   {
     public StateManager StateManager { get; set; }
 
-    public virtual void OnTerminate()
-    {
+    public abstract void OnExitState();
 
-    }
-
-    public virtual void OnInitialize(object parameter)
-    {
-
-    }
+    public abstract void OnEnterState(object parameter);
 
     protected void ChangeState<T>(object parameter = null) where T : State, new()
     {
