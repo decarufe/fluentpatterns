@@ -11,12 +11,18 @@ namespace StateConsoleApp
   {
     static void Main(string[] args)
     {
+      var commandManager = new CommandManager();
       var stateManager = new StateManagerBuilder()
-        .RegisterState(() => new IdleState())
+        .RegisterState(() => new IdleState(commandManager))
         .RegisterState(() => new RunningState())
         .RegisterState(() => new InvalidState())
         .RegisterState(() => new StopState())
-        .Start<IdleState>();
+        .Build();
+
+      commandManager.Register("run", new RunCommand(stateManager));
+      commandManager.Register("stop", new StopCommand(stateManager));
+
+      stateManager.ChangeState<IdleState>();
 
       Console.WriteLine();
       stateManager.Terminate();

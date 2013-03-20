@@ -19,7 +19,7 @@ namespace StateLibrary
       }
     }
 
-    public State ChangeState<T>(object parameter = null) where T : State, new()
+    public State ChangeState<T>(object parameter = null) where T : State
     {
       Terminate();
 
@@ -43,6 +43,5 @@ namespace StateLibrary
     {
       return mCurrentState is T;
     }
-
   }
 }

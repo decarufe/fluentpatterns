@@ -16,11 +16,16 @@ namespace StateLibrary
 
     public StateManager Start<T>()
     {
-      var stateManager = new StateManager(_states);
+      var stateManager = Build();
       var startState = _states.Single(t => t is T);
       startState.StateManager = stateManager;
       startState.OnEnterState(null);
       return stateManager;
+    }
+
+    public StateManager Build()
+    {
+      return new StateManager(_states);
     }
   }
 }

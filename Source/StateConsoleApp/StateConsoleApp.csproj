@@ -41,18 +41,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandManager.cs" />
+    <Compile Include="ICommand.cs" />
     <Compile Include="InvalidState.cs" />
     <Compile Include="IdleState.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RunCommand.cs" />
     <Compile Include="RunningState.cs" />
+    <Compile Include="StopCommand.cs" />
     <Compile Include="StopState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ChainOfResponsability\ChainOfResponsability.csproj">
+      <Project>{2763b5e1-fa49-475a-8d0b-a574a94fe410}</Project>
+      <Name>ChainOfResponsability</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StateLibrary\StateLibrary.csproj">
       <Project>{ad9ea8fc-8f4a-4b27-8da3-6daa4b97a95e}</Project>
       <Name>StateLibrary</Name>
