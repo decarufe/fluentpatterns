@@ -9,10 +9,6 @@
       _message = message;
     }
 
-    public Command2()
-    {
-    }
-
     public void Execute()
     {
       System.Console.WriteLine("Command 2 " + _message);

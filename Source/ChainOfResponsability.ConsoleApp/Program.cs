@@ -2,9 +2,9 @@
 
 namespace ChainOfResponsability.ConsoleApp
 {
-  internal class Program
+  internal static class Program
   {
-    private static void Main(string[] args)
+    private static void Main()
     {
       IChainCommand chain = new Chain<IChainCommand>()
         .Add<Command1>()

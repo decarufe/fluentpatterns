@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace ChainOfResponsability
 {
@@ -11,7 +10,7 @@ namespace ChainOfResponsability
 
       public Chain<T> Add<THandler>() where THandler : T, new()
       {
-        return Add<THandler>(() => new THandler());
+        return Add(() => new THandler());
       }
 
       public Chain<T> Add<THandler>(Func<THandler> instance) where THandler : T
