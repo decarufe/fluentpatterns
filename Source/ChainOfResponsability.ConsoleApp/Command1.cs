@@ -1,6 +1,6 @@
 ﻿namespace ChainOfResponsability.ConsoleApp
 {
-  public class Command1 : ICommand
+  public class Command1 : IChainCommand
   {
     public void Execute()
     {
@@ -8,6 +8,6 @@
       if (NextInChain != null) NextInChain.Execute();
     }
 
-    public ICommand NextInChain { get; set; }
+    public IChainCommand NextInChain { get; set; }
   }
 }

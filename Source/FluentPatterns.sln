@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 12
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainOfResponsability", "ChainOfResponsability\ChainOfResponsability.csproj", "{2763B5E1-FA49-475A-8D0B-A574A94FE410}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainOfResponsability.ConsoleApp", "ChainOfResponsability.ConsoleApp\ChainOfResponsability.ConsoleApp.csproj", "{FDC78E42-D819-40E0-8AEF-A118CC2FA7F8}"
@@ -12,6 +12,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateLibrary", "StateLibrary\StateLibrary.csproj", "{AD9EA8FC-8F4A-4B27-8DA3-6DAA4B97A95E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateConsoleApp", "StateConsoleApp\StateConsoleApp.csproj", "{C10BC95A-0DD9-4C9D-AD76-C0590A7F7149}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommandPattern", "CommandPattern", "{46DEBFDD-7D92-4467-9125-B0996B0A24B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandPattern", "CommandPattern\CommandPattern.csproj", "{F5FF13E2-749A-45E1-B095-7C2E685C0A6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,14 +39,19 @@ Global
 		{C10BC95A-0DD9-4C9D-AD76-C0590A7F7149}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C10BC95A-0DD9-4C9D-AD76-C0590A7F7149}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C10BC95A-0DD9-4C9D-AD76-C0590A7F7149}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5FF13E2-749A-45E1-B095-7C2E685C0A6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5FF13E2-749A-45E1-B095-7C2E685C0A6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5FF13E2-749A-45E1-B095-7C2E685C0A6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5FF13E2-749A-45E1-B095-7C2E685C0A6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{2763B5E1-FA49-475A-8D0B-A574A94FE410} = {5D5ABC9F-4B8F-488C-B807-805FEABF2E5F}
 		{FDC78E42-D819-40E0-8AEF-A118CC2FA7F8} = {5D5ABC9F-4B8F-488C-B807-805FEABF2E5F}
+		{2763B5E1-FA49-475A-8D0B-A574A94FE410} = {5D5ABC9F-4B8F-488C-B807-805FEABF2E5F}
 		{AD9EA8FC-8F4A-4B27-8DA3-6DAA4B97A95E} = {21AEA285-4B67-405F-9F57-E102A02EA1E7}
 		{C10BC95A-0DD9-4C9D-AD76-C0590A7F7149} = {21AEA285-4B67-405F-9F57-E102A02EA1E7}
+		{F5FF13E2-749A-45E1-B095-7C2E685C0A6E} = {46DEBFDD-7D92-4467-9125-B0996B0A24B9}
 	EndGlobalSection
 EndGlobal

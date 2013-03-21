@@ -1,6 +1,6 @@
 ﻿namespace ChainOfResponsability.ConsoleApp
 {
-  public class Command2 : ICommand
+  public class Command2 : IChainCommand
   {
     private readonly string _message;
 
@@ -19,6 +19,6 @@
       if (NextInChain != null) NextInChain.Execute();
     }
 
-    public ICommand NextInChain { get; set; }
+    public IChainCommand NextInChain { get; set; }
   }
 }

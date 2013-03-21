@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StateLibrary
 {
   public class StateManager
   {
-    private Dictionary<Type, State> _states = new Dictionary<Type, State>(); 
-    private State mCurrentState;
+    private readonly Dictionary<Type, State> _states = new Dictionary<Type, State>(); 
+    private State _currentState;
 
     public StateManager(IEnumerable<State> states)
     {
@@ -19,29 +17,22 @@ namespace StateLibrary
       }
     }
 
-    public State ChangeState<T>(object parameter = null) where T : State
+    public void ChangeState<T>(object parameter = null) where T : State
     {
       Terminate();
 
-      mCurrentState = _states[typeof(T)];
-      mCurrentState.StateManager = this;
-      mCurrentState.OnEnterState(parameter);
-
-      return null;
+      _currentState = _states[typeof(T)];
+      _currentState.StateManager = this;
+      _currentState.OnEnterState(parameter);
     }
 
     public void Terminate()
     {
-      if (mCurrentState != null)
+      if (_currentState != null)
       {
-        mCurrentState.OnExitState();
-        mCurrentState = null;
+        _currentState.OnExitState();
+        _currentState = null;
       }
-    }
-
-    public bool CurrentStateIs<T>()
-    {
-      return mCurrentState is T;
     }
   }
 }

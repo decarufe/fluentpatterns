@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
-namespace StateConsoleApp
+namespace CommandPattern
 {
   public class CommandManager
   {

@@ -1,4 +1,5 @@
-﻿using StateLibrary;
+﻿using CommandPattern;
+using StateLibrary;
 
 namespace StateConsoleApp
 {
