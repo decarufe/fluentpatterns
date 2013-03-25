@@ -11,7 +11,7 @@ namespace ChainOfResponsability.ConsoleApp
         .Add<Command2>(() => new Command2("Test"))
         .Build();
 
-      chain.Execute();
+      chain.Execute(null);
 
       Console.WriteLine("Press enter to quit.");
       Console.ReadLine();

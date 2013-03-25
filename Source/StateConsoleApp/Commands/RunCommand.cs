@@ -12,7 +12,7 @@ namespace StateConsoleApp
       _stateManager = stateManager;
     }
 
-    public void Execute()
+    public void Execute(object param)
     {
       _stateManager.ChangeState<RunningState>();
     }

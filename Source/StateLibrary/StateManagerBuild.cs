@@ -4,11 +4,11 @@ using System.Linq;
 
 namespace StateLibrary
 {
-  public class StateManagerBuilder
+  public class StateManagerBuild : IBuild<StateManager>
   {
     private readonly List<State> _states = new List<State>(); 
 
-    public StateManagerBuilder RegisterState<T>(Func<T> state) where T : State
+    public StateManagerBuild RegisterState<T>(Func<T> state) where T : State
     {
       _states.Add(state());
       return this;

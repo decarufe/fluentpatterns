@@ -10,25 +10,47 @@ namespace StateConsoleApp
 {
   class Program
   {
+    private static CommandManager _commandManager;
+    private static StateManager _stateManager;
+
     static void Main(string[] args)
     {
-      var commandManager = new CommandManager();
-      var stateManager = new StateManagerBuilder()
-        .RegisterState(() => new IdleState(commandManager))
+      _stateManager = new StateManagerBuild()
+        .RegisterState(() => new IdleState())
         .RegisterState(() => new RunningState())
         .RegisterState(() => new InvalidState())
         .RegisterState(() => new StopState())
         .Build();
 
-      commandManager.Register("run", new RunCommand(stateManager));
-      commandManager.Register("stop", new StopCommand(stateManager));
+      _stateManager.StateChanged += StateManagerOnStateChanged;
 
-      stateManager.ChangeState<IdleState>();
+      _commandManager = new CommandManager();
+      _commandManager.Register("run", new RunCommand(_stateManager));
+      _commandManager.Register("stop", new StopCommand(_stateManager));
+
+      _stateManager.ChangeState<IdleState>();
 
       Console.WriteLine();
-      stateManager.Terminate();
+      _stateManager.Terminate();
       Console.WriteLine("Press enter to exit");
       Console.ReadLine();
+    }
+
+    private static void StateManagerOnStateChanged(object sender, StateChangedEventArgs args)
+    {
+      if (args.NewState is IdleState)
+      {
+        Console.Write("Type run or stop: ");
+        string response = Console.ReadLine() ?? String.Empty;
+        try
+        {
+          _commandManager.ExecuteCommand(response.ToLower());
+        }
+        catch (KeyNotFoundException)
+        {
+          _stateManager.ChangeState<InvalidState>("Invalid Command");
+        }
+      }
     }
   }
 }

@@ -9,6 +9,14 @@ namespace StateLibrary
     private readonly Dictionary<Type, State> _states = new Dictionary<Type, State>(); 
     private State _currentState;
 
+    public event EventHandler<StateChangedEventArgs> StateChanged;
+
+    protected virtual void OnStateChanged(StateChangedEventArgs e)
+    {
+      EventHandler<StateChangedEventArgs> handler = StateChanged;
+      if (handler != null) handler(this, e);
+    }
+
     public StateManager(IEnumerable<State> states)
     {
       foreach (var state in states)
@@ -19,11 +27,14 @@ namespace StateLibrary
 
     public void ChangeState<T>(object parameter = null) where T : State
     {
+      State lastState = _currentState;
       Terminate();
 
       _currentState = _states[typeof(T)];
       _currentState.StateManager = this;
       _currentState.OnEnterState(parameter);
+
+      OnStateChanged(new StateChangedEventArgs(lastState, _currentState));
     }
 
     public void Terminate()

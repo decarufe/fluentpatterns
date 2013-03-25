@@ -9,10 +9,10 @@
       _message = message;
     }
 
-    public void Execute()
+    public void Execute(object param)
     {
       System.Console.WriteLine("Command 2 " + _message);
-      if (NextInChain != null) NextInChain.Execute();
+      if (NextInChain != null) NextInChain.Execute(param);
     }
 
     public IChainCommand NextInChain { get; set; }

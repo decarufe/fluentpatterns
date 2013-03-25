@@ -4,7 +4,7 @@ namespace CommandPattern
 {
   public class CommandManager
   {
-    private Dictionary<string, ICommand> _commands = new Dictionary<string, ICommand>();
+    private readonly Dictionary<string, ICommand> _commands = new Dictionary<string, ICommand>();
 
     public void Register(string name, ICommand command)
     {
@@ -13,7 +13,7 @@ namespace CommandPattern
 
     public void ExecuteCommand(string name)
     {
-      _commands[name].Execute();
+      _commands[name].Execute(null);
     }
   }
 }
