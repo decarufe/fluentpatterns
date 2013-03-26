@@ -11,9 +11,10 @@ namespace VisitorConsoelApp.Validator
       _rule = rule;
     }
 
-    public void Validate(object obj)
+    public void Validate(string value)
     {
-      if (!_rule((string)obj)) throw new Exception(string.Format("String validation failed for {0}", obj));
+      Console.WriteLine("String validation");
+      if (!_rule(value)) throw new Exception(string.Format("String validation failed for {0}", value));
     }
   }
 }

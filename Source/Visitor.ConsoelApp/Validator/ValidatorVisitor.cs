@@ -11,7 +11,6 @@ namespace VisitorConsoelApp.Validator
 
     public void Visit(IntValidation validation, ValidatorParam value)
     {
-      Console.WriteLine("Int validation");
       try
       {
         validation.Validate(value.IntValue);
@@ -24,7 +23,6 @@ namespace VisitorConsoelApp.Validator
 
     public void Visit(StringValidation validation, ValidatorParam value)
     {
-      Console.WriteLine("String validation");
       try
       {
         validation.Validate(value.StringValue);
