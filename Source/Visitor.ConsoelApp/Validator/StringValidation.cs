@@ -11,14 +11,9 @@ namespace VisitorConsoelApp.Validator
       _rule = rule;
     }
 
-    public Exception Exception
-    {
-      get { return new FormatException(); }
-    }
-
     public void Validate(object obj)
     {
-      if (!_rule((string)obj)) throw Exception;
+      if (!_rule((string)obj)) throw new Exception(string.Format("String validation failed for {0}", obj));
     }
   }
 }

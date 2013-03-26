@@ -11,14 +11,9 @@ namespace VisitorConsoelApp.Validator
       _rule = rule;
     }
 
-    public Exception Exception
-    {
-      get { return new ArgumentOutOfRangeException(); }
-    }
-
     public void Validate(object obj)
     {
-      if (!_rule((int)obj)) throw Exception;
+      if (!_rule((int)obj)) throw new Exception(string.Format("Int validation failed for {0}", obj));
     }
   }
 }
