@@ -6,9 +6,10 @@ namespace CommandPattern
   {
     private readonly Dictionary<string, ICommand> _commands = new Dictionary<string, ICommand>();
 
-    public void Register(string name, ICommand command)
+    public CommandManager Register(string name, ICommand command)
     {
       _commands.Add(name, command);
+      return this;
     }
 
     public void ExecuteCommand(string name)
