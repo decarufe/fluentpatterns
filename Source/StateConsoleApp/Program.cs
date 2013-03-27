@@ -24,9 +24,9 @@ namespace StateConsoleApp
 
       _stateManager.StateChanged += StateManagerOnStateChanged;
 
-      _commandManager = new CommandManager();
-      _commandManager.Register("run", new RunCommand(_stateManager));
-      _commandManager.Register("stop", new StopCommand(_stateManager));
+      _commandManager = new CommandManager()
+        .Register("run", new RunCommand(_stateManager))
+        .Register("stop", new StopCommand(_stateManager));
 
       _stateManager.ChangeState<IdleState>();
 
