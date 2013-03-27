@@ -1,4 +1,6 @@
-﻿using CommandPattern;
+﻿using System;
+using System.Windows.Input;
+using CommandPattern;
 using StateLibrary;
 
 namespace StateConsoleApp
@@ -15,6 +17,19 @@ namespace StateConsoleApp
     public void Execute(object param)
     {
       _stateManager.ChangeState<RunningState>();
+    }
+
+    public bool CanExecute(object parameter)
+    {
+      return true;
+    }
+
+    public event EventHandler CanExecuteChanged;
+
+    protected virtual void OnCanExecuteChanged()
+    {
+      EventHandler handler = CanExecuteChanged;
+      if (handler != null) handler(this, EventArgs.Empty);
     }
   }
 }

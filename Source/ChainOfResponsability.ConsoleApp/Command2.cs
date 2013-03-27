@@ -1,4 +1,6 @@
-﻿namespace ChainOfResponsability.ConsoleApp
+﻿using System;
+
+namespace ChainOfResponsability.ConsoleApp
 {
   public class Command2 : IChainCommand
   {
@@ -16,5 +18,18 @@
     }
 
     public IChainCommand NextInChain { get; set; }
+
+    public bool CanExecute(object parameter)
+    {
+      return true;
+    }
+
+    public event EventHandler CanExecuteChanged;
+
+    protected virtual void OnCanExecuteChanged()
+    {
+      EventHandler handler = CanExecuteChanged;
+      if (handler != null) handler(this, EventArgs.Empty);
+    }
   }
 }

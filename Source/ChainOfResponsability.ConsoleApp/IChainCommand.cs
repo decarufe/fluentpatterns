@@ -1,4 +1,5 @@
-﻿using CommandPattern;
+﻿using System.Windows.Input;
+using CommandPattern;
 
 namespace ChainOfResponsability.ConsoleApp
 {
