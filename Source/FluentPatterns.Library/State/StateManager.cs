@@ -1,8 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace StateLibrary
+namespace FluentPatterns.Library
 {
   public class StateManager
   {

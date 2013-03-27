@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Windows.Input;
 
-namespace CommandPattern
+namespace FluentPatterns.Library
 {
   public class CommandManager
   {

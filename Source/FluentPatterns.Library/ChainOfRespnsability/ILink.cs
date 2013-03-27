@@ -1,4 +1,4 @@
-﻿namespace ChainOfResponsability
+namespace FluentPatterns.Library
 {
   public interface ILink<T> where T : ILink<T>
   {

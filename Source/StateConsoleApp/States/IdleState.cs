@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using CommandPattern;
-using StateLibrary;
+using FluentPatterns.Library;
 
 namespace StateConsoleApp
 {

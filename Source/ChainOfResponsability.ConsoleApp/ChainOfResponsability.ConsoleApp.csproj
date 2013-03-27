@@ -49,13 +49,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ChainOfResponsability\ChainOfResponsability.csproj">
-      <Project>{2763B5E1-FA49-475A-8D0B-A574A94FE410}</Project>
-      <Name>ChainOfResponsability</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CommandPattern\CommandPattern.csproj">
-      <Project>{F5FF13E2-749A-45E1-B095-7C2E685C0A6E}</Project>
-      <Name>CommandPattern %28CommandPattern\CommandPattern%29</Name>
+    <ProjectReference Include="..\FluentPatterns.Library\FluentPatterns.Library.csproj">
+      <Project>{D44925B1-238E-4FA1-8173-D101F94C4789}</Project>
+      <Name>FluentPatterns.Library</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

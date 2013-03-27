@@ -1,5 +1,4 @@
-﻿using System;
-using StateLibrary;
+using FluentPatterns.Library;
 
 namespace StateConsoleApp
 {

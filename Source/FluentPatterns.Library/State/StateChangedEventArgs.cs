@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-namespace StateLibrary
+namespace FluentPatterns.Library
 {
   public class StateChangedEventArgs : EventArgs
   {

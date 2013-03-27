@@ -1,19 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CommandPattern;
-using StateLibrary;
+using FluentPatterns.Library;
 
 namespace StateConsoleApp
 {
-  class Program
+  static class Program
   {
     private static CommandManager _commandManager;
     private static StateManager _stateManager;
 
-    static void Main(string[] args)
+    static void Main()
     {
       _stateManager = new StateManagerBuild()
         .RegisterState(() => new IdleState())

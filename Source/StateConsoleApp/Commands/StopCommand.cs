@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Input;
-using CommandPattern;
-using StateLibrary;
+using FluentPatterns.Library;
 
 namespace StateConsoleApp
 {

@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 using System.Threading;
-using StateLibrary;
+using FluentPatterns.Library;
 
 namespace StateConsoleApp
 {

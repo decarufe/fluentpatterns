@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ChainOfResponsability
+namespace FluentPatterns.Library
 {
     public class Chain<T> where T: ILink<T>
     {

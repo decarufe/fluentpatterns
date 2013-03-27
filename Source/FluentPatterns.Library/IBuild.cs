@@ -1,4 +1,4 @@
-﻿namespace StateLibrary
+namespace FluentPatterns.Library
 {
   public interface IBuild<out T>
   {

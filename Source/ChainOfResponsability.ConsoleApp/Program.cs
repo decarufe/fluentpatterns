@@ -1,4 +1,5 @@
 ﻿using System;
+using FluentPatterns.Library;
 
 namespace ChainOfResponsability.ConsoleApp
 {
