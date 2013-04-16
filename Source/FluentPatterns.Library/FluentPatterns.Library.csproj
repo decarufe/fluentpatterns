@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChainOfRespnsability\Chain.cs" />
+    <Compile Include="ChainOfRespnsability\ChainBuilder.cs" />
     <Compile Include="ChainOfRespnsability\ILink.cs" />
     <Compile Include="Command\CommandManager.cs" />
     <Compile Include="IBuild.cs" />
@@ -48,7 +48,7 @@
     <Compile Include="State\State.cs" />
     <Compile Include="State\StateChangedEventArgs.cs" />
     <Compile Include="State\StateManager.cs" />
-    <Compile Include="State\StateManagerBuild.cs" />
+    <Compile Include="State\StateManagerBuilder.cs" />
     <Compile Include="Visitor\Visitor.cs" />
     <Compile Include="Visitor\VisitorExtensions.cs" />
     <Compile Include="Visitor\VisitorFactory.cs" />

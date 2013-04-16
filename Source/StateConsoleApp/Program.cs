@@ -12,7 +12,7 @@ namespace StateConsoleApp
 
     static void Main()
     {
-      _stateManager = new StateManagerBuild()
+      _stateManager = new StateManagerBuilder()
         .RegisterState(() => new IdleState())
         .RegisterState(() => new RunningState())
         .RegisterState(() => new InvalidState())

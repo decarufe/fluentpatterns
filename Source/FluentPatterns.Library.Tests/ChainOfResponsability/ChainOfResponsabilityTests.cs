@@ -3,7 +3,7 @@ using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
-namespace FluentPatterns.Library.Tests.ChainOfResponsability
+namespace FluentPatterns.Library.Tests
 {
   [TestClass]
   public class ChainOfResponsabilityTests
@@ -11,7 +11,7 @@ namespace FluentPatterns.Library.Tests.ChainOfResponsability
     [TestMethod]
     public void Calling_Build_on_an_empty_chain_should_throw()
     {
-      var chain = new Chain<Link>();
+      var chain = new ChainBuilder<Link>();
 
       chain.Invoking(c => c.Build())
            .ShouldThrow<Exception>();
@@ -20,7 +20,7 @@ namespace FluentPatterns.Library.Tests.ChainOfResponsability
     [TestMethod]
     public void A_single_link_chain_should_not_have_next()
     {
-      var chain = new Chain<Link>()
+      var chain = new ChainBuilder<Link>()
         .Add<LinkImpl>()
         .Build();
 
@@ -30,7 +30,7 @@ namespace FluentPatterns.Library.Tests.ChainOfResponsability
     [TestMethod]
     public void A_multi_link_chain_should_have_next()
     {
-      var chain = new Chain<Link>()
+      var chain = new ChainBuilder<Link>()
         .Add<LinkImpl>()
         .Add<LinkImpl>()
         .Build();
@@ -43,7 +43,7 @@ namespace FluentPatterns.Library.Tests.ChainOfResponsability
     {
       var link = new Mock<LinkCustom>();
 
-      var chain = new Chain<Link>()
+      var chain = new ChainBuilder<Link>()
         .Add(() => link.Object.Create())
         .Build();
 
