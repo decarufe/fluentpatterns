@@ -7,7 +7,7 @@ namespace ChainOfResponsability.ConsoleApp
   {
     private static void Main()
     {
-      IChainCommand chain = new ChainBuilder<IChainCommand>()
+      ChainCommand chain = new ChainBuilder<ChainCommand>()
         .Add<Command1>()
         .Add<Command2>(() => new Command2("Test"))
         .Build();
