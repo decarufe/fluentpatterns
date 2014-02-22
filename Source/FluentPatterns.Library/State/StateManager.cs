@@ -16,11 +16,11 @@ namespace FluentPatterns.Library
       if (handler != null) handler(this, e);
     }
 
-    public StateManager(IEnumerable<State> states)
+    public StateManager(IEnumerable<KeyValuePair<Type, State>> states)
     {
       foreach (var state in states)
       {
-        _states.Add(state.GetType(), state);
+        _states.Add(state.Key, state.Value);
       }
     }
 

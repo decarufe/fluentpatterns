@@ -5,11 +5,11 @@ namespace FluentPatterns.Library
 {
   public class StateManagerBuilder : IBuild<StateManager>
   {
-    private readonly List<State> _states = new List<State>(); 
+    private readonly IDictionary<Type, State> _states = new Dictionary<Type, State>();
 
     public StateManagerBuilder RegisterState<T>(Func<T> state) where T : State
     {
-      _states.Add(state());
+      _states.Add(typeof(T), state());
       return this;
     }
 
